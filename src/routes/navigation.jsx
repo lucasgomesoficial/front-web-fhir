@@ -5,6 +5,7 @@ import { Dashboard } from "../pages/DashboardPage";
 import { ErrorPage } from "../pages/ErrorPage";
 import { Login } from "../pages/LoginPage";
 import { About } from "../pages/AboutPage";
+import { Patient } from "@/pages/PatientPage";
 
 function ProtectRoute({ Route }) {
   return (
@@ -43,6 +44,7 @@ export function Navigation() {
         <Route path="admin" element={<Admin />} />
       </Route> */}
       <Route path="*" element={<ErrorPage />} />
+      <Route path="/pacientes" element={<Patient />} />
     </Routes>
   );
 }
