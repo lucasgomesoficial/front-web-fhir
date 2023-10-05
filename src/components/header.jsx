@@ -1,5 +1,5 @@
 import { WellnessIcon } from "../assets/wellnessIcon";
-import { Button } from "@/components/ui/Button";
+import { Button } from "./index";
 import { LogOut } from "lucide-react";
 import { useAuth } from "../context/authProvider";
 
