@@ -1,4 +1,7 @@
-import * as React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useAuth } from "../../../context/authProvider";
 
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
@@ -7,20 +10,25 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export function UserAuthForm({ className, ...props }) {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { signin } = useAuth();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
 
-  async function onSubmit(event) {
-    event.preventDefault();
-    setIsLoading(true);
+  function onSubmit(data) {
+    setIsLoading(true)
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    function callback() {
+      navigate("/dashboard")
+      setIsLoading(false)
+    }
+
+    signin(data, callback);
   }
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-2">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
@@ -28,12 +36,13 @@ export function UserAuthForm({ className, ...props }) {
             </Label>
             <Input
               id="email"
-              placeholder="email@exemplo.com"
+              placeholder="Login"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
+              {...register("email")}
             />
           </div>
           <div className="grid gap-1">
@@ -42,57 +51,22 @@ export function UserAuthForm({ className, ...props }) {
             </Label>
             <Input
               id="password"
-              placeholder="********"
+              placeholder="Senha"
               type="password"
               autoCapitalize="none"
               autoCorrect="off"
               disabled={isLoading}
+              {...register("password")}
             />
           </div>
           <Button disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Entrar
+            Conectar
           </Button>
         </div>
       </form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            ou continue com
-          </span>
-        </div>
-      </div>
-      <div className="grid gap-1">
-        <Button variant="outline" type="button" disabled={isLoading}>
-          {isLoading ? (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <Icons.google className="mr-2 h-4 w-4" />
-          )}{" "}
-          Google
-        </Button>
-        <Button variant="outline" type="button" disabled={isLoading}>
-          {isLoading ? (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <Icons.apple className="mr-2 h-4 w-4" />
-          )}{" "}
-          Apple
-        </Button>
-        <Button variant="outline" type="button" disabled={isLoading}>
-          {isLoading ? (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <Icons.facebook className="mr-2 h-4 w-4" />
-          )}{" "}
-          Facebook
-        </Button>
-      </div>
     </div>
   );
 }

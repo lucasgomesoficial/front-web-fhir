@@ -1,24 +1,26 @@
 import { Login } from "@/pages/LoginPage";
 import { Dashboard } from "@/pages/DashboardPage";
 import { ErrorPage } from "@/pages/ErrorPage";
-// import { About } from "../pages/AboutPage";
-import { Patient } from "@/pages/PatientPage";
+import { Profile } from "@/pages/ProfilePage";
 
-export const config = [
+export const routes = [
   {
     path: "/",
     component: <Login />,
   },
   {
-    path: "/home",
+    path: "*",
+    component: <ErrorPage />,
+  },
+];
+
+export const routesProtect = [
+  {
+    path: "/dashboard",
     component: <Dashboard />,
   },
   {
-    path: "/pacientes",
-    component: <Patient />,
-  },
-  {
-    path: "*",
-    component: <ErrorPage />,
+    path: "/profile",
+    component: <Profile />,
   },
 ];
