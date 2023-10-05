@@ -1,6 +1,4 @@
-import { Header } from "@/components/header";
-import { Button } from "@/components/ui/Button";
-import { Label } from "@/components/ui/Label";
+import { Button, Header, Label } from "../../components/index";
 import { Undo2 } from "lucide-react";
 import { dataProfile } from "./config";
 import { useNavigate } from "react-router-dom";

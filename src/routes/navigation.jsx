@@ -1,10 +1,7 @@
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/authProvider";
 // import { routes, routesProtect } from "./config";
-import { Login } from "@/pages/LoginPage";
-import { Dashboard } from "@/pages/DashboardPage";
-import { ErrorPage } from "@/pages/ErrorPage";
-import { Profile } from "@/pages/ProfilePage";
+import { Login, Dashboard, ErrorPage, Profile } from "../pages/index";
 
 function RequireAuth({ children }) {
   const location = useLocation();
