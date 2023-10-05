@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+
 import { fakeAuthProvider } from "../lib/fakeAuthProvider";
 
 const AuthContext = createContext(null);
@@ -26,16 +26,6 @@ export function AuthProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-function useAuth() {
+export function useAuth() {
   return useContext(AuthContext);
-}
-
-export function RequireAuth({ children }) {
-  const location = useLocation();
-  const auth = useAuth();
-  if (!auth.user) {
-    return <Navigate to="/" state={{ path: location.pathname }} />;
-  }
-
-  return children;
 }
