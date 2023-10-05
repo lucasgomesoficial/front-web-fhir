@@ -1,12 +1,14 @@
-import { CardGraphInfo } from "@/components/cardGraphInfo";
-import { CardStatsInfo } from "@/components/cardStatsInfo";
-import { Header } from "@/components/header";
-import { Button } from "@/components/ui/Button";
 import { Ruler, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { WeightIcon } from "../../assets/weightIcon";
+import {
+  Button,
+  CardGraphInfo,
+  CardStatsInfo,
+  Header,
+} from "../../components/index";
 import { SelectMonth } from "./components/selectMonth";
 import { dataFeelings, dataGraph, selectMonth } from "./config";
-import { WeightIcon } from "../../assets/weightIcon";
-import { useNavigate } from "react-router-dom";
 
 export function Dashboard() {
   const navigate = useNavigate();
