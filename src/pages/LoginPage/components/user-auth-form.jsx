@@ -39,7 +39,7 @@ export function UserAuthForm({ className, ...props }) {
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
-              {...register("email")}
+              {...register("email", { required: true })}
             />
           </div>
           <div className="grid gap-1">
