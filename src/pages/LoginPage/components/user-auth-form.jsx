@@ -60,7 +60,11 @@ export function UserAuthForm({ className, ...props }) {
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Conectar
+            Entrar
+          </Button>
+          <h2 className="text-center mt-4 mb-4">Não possui uma conta?</h2>
+          <Button className="bg-white text-secondary hover:bg-white border-2 border-secondary" disabled={isLoading}>
+            Cadastre-se
           </Button>
         </div>
       </form>
