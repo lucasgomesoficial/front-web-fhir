@@ -6,6 +6,7 @@ export * from './ui/label'
 export * from './ui/progress'
 export * from './ui/select'
 export * from './ui/switch'
+export * from './ui/sheet'
 
 // components criados
 export * from './cardGraphInfo'

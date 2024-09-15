@@ -1,18 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-
-export function CardStatsInfo({ title, msg, description, iconCard: Icon }) {
+export function CardStatsInfo({title}) {
   return (
-    <Card className="w-full h-44">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-2xl">{title}</CardTitle>
-        <Icon />
-      </CardHeader>
-      <CardContent className="flex flex-col gap-4">
-        <div className="text-4xl font-bold">{msg}</div>
-        {description && (
-          <p className="text-xl text-muted-foreground">{description}</p>
-        )}
-      </CardContent>
-    </Card>
+    <div className="flex py-8 px-8">
+      <div className="w-80 h-96 border rounded-lg border-solid border-inherit shadow-lg">
+        <div className="flex px-8 pt-4 items-start gap-4">
+          <h3 className="text-base font-normal">{title}</h3>
+        </div>
+      </div>
+    </div>
   );
 }

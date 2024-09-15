@@ -1,5 +1,5 @@
+import { ArrowLeftIcon } from "lucide-react";
 import { Button, Header, Label } from "../../components/index";
-import { Undo2 } from "lucide-react";
 import { dataProfile } from "./config";
 import { useNavigate } from "react-router-dom";
 
@@ -12,10 +12,10 @@ export function Profile() {
         <div className="flex justify-between">
           <h2 className="text-4xl font-bold">Perfil do Colaborador</h2>
           <Button
-            className="flex gap-5 text-base"
+            className="flex-initial bg-transparent hover:bg-transparent"
             onClick={() => navigate("/dashboard")}
           >
-            <Undo2 /> Voltar
+            <ArrowLeftIcon  color="#0074d9" />
           </Button>
         </div>
         <div className="grid grid-cols-5 gap-4 mt-12">
