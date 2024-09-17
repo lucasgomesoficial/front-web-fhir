@@ -1,4 +1,4 @@
-export function CardStatsInfo({title}) {
+export function CardStatsInfo({ title, label, value }) {
   return (
     <div className="flex py-8 px-8">
       <div className="w-80 h-96 border rounded-lg border-solid border-inherit shadow-lg">
