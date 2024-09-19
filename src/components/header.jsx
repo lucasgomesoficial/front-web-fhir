@@ -11,7 +11,7 @@ export function Header() {
   }
 
   return (
-    <header className="flex justify-between items-center bg-primary h-28 rounded-b-2xl text-white px-14 font-semibold">
+    <header className="flex justify-between items-center bg-primary w-full h-28 rounded-b-2xl text-white px-14 font-semibold">
       <div className="flex-col gap-8 items-center">
         <p>{user.email}</p>
         <p>CPF: 000000000-00</p>
