@@ -15,7 +15,7 @@ export function CardStatsInfo({ orderNumber, orderStatus, tokenDelivery }) {
           <img src={deliveryimg} alt="animação entrega delivery" />
         </div>
         <div className="flex px-8 pt-4 items-start gap-4">
-          <h3 className="text-base font-bold">Entrega:{orderNumber}</h3>
+          <h3 className="text-base font-bold">Entrega: {orderNumber}</h3>
         </div>
         <div className="flex px-8 pt-4 items-start gap-4">
           <p className="text-base font-normal">Sua entrega é realizada por um colaborador parceiro</p>
