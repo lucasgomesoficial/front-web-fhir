@@ -1,11 +1,14 @@
 import { Button } from "./index";
-import { HeadphonesIcon, LogOut, Settings, UserCircle } from "lucide-react";
+import { HeadphonesIcon, LogOut, UserCircle } from "lucide-react";
 import { useAuth } from "../context/authProvider";
 import { useNavigate } from "react-router-dom";
+import { Preferences } from "./preferences";
+import { Suport } from "./suport";
 
 export function Header() {
   const navigate = useNavigate();
   const { signout, user } = useAuth();
+
   function test() {
     console.log("logout")
   }
@@ -17,16 +20,8 @@ export function Header() {
         <p>CPF: 000000000-00</p>
       </div>
       <div className="flex items-center gap-3">
-        <Button
-          className="flex-initial bg-transparent hover:bg-transparent px-2"
-        >
-          <Settings />
-        </Button>
-        <Button
-          className="flex-initial bg-transparent hover:bg-transparent px-2"
-        >
-          <HeadphonesIcon />
-        </Button>
+        <Preferences />
+        <Suport />
         <Button
           className="px-2 bg-white text-secondary hover:bg-white border-2"
           onClick={() => navigate("/profile")}
@@ -38,7 +33,7 @@ export function Header() {
           className="flex-initial border-none bg-transparent hover:bg-transparent px-2"
           onClick={() => signout(test)}
         >
-          <LogOut color="#ffffff"/>
+          <LogOut color="#ffffff" />
         </Button>
       </div>
     </header>
