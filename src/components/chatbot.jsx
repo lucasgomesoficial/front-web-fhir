@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Input } from './input';
-import { Button } from './button';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
 import { ArrowLeft, Send } from 'lucide-react';
 
 export function Chatbot() {

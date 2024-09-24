@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { HeadphonesIcon } from "lucide-react";
-import { Chatbot } from "./ui/chatboot";
+import { Chatbot } from "./chatbot";
 
 export function Suport() {
   return (
