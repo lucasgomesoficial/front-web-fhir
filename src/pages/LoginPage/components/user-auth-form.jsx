@@ -5,6 +5,7 @@ import { useAuth } from "../../../context/authProvider";
 
 import { cn } from "@/lib/utils";
 import { Icons, Button, Input, Label } from "../../../components/index";
+import { RegisterNewAccount } from "./registerNewAccount";
 
 export function UserAuthForm({ className, ...props }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +34,7 @@ export function UserAuthForm({ className, ...props }) {
             </Label>
             <Input
               id="email"
-              placeholder="Login"
+              placeholder="E-mail"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
@@ -60,8 +61,10 @@ export function UserAuthForm({ className, ...props }) {
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Conectar
+            Entrar
           </Button>
+          <h2 className="text-center mt-4 mb-4">Não possui uma conta?</h2>
+          <RegisterNewAccount />
         </div>
       </form>
     </div>
